@@ -1,4 +1,4 @@
-from graph import Graph
+from src.graph import Graph
 
 class PrimMST:
     def __init__(self, graph):

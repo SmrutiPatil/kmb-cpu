@@ -1,12 +1,6 @@
-from graph import Graph
-from dijkstra import Dijkstra
-from prim import PrimMST
-
-# Example usage:
-vertices = [0, 1, 2, 3, 4, 5, 6, 7]
-edges = [(0, 1, 3), (0, 2, 5), (0, 3, 7), (1, 4, 2), (1, 5, 4), (2, 6, 6), (2, 7, 8), (3, 4, 9), (4, 5, 11), (5, 6, 13), (6, 7, 15)]
-
-terminal_vertices = [0,5,7]
+from src.graph import Graph
+from src.dijkstra import Dijkstra
+from src.prim import PrimMST
 
 def KMB(graph, terminal_vertices):
 
@@ -57,12 +51,3 @@ def KMB(graph, terminal_vertices):
   # Visualize the graph
 
   graph.highlight_subgraph(steiner, terminal_vertices, filename = "kmb.png")
-
-graph = Graph(vertices, edges)
-
-KMB(graph, terminal_vertices)
-
-
-
-
-
