@@ -23,7 +23,7 @@ def KMB(graph, terminal_vertices):
 
   graph1.save_graph("graph1.png")
 
-  # S2
+  # S3
   T1 = PrimMST(graph1).find_mst()
 
   T1.save_graph("t1.png")
