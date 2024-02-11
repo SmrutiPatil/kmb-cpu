@@ -1,5 +1,5 @@
-from src.graph import Graph
-from src.kmb import KMB
+from python.src.graph import Graph
+from python.src.kmb import KMB
 
 # all vertices
 vertices = [0, 1, 2, 3, 4, 5, 6, 7]
