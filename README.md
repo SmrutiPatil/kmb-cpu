@@ -1,5 +1,7 @@
 # KMB algorithm for Steiner Trees
 
+## Run
+
 ### Python
 
 ```bash
@@ -69,6 +71,28 @@ T2 = minimum_spanning_tree(G2);
 
 Output: T2
 ```
+
+### KMB Algorithm Visualization
+
+![KMB Algorithm Visualization](https://github.com/pratikpakhale/kmb-cpu/blob/main/kmb.png?raw=true)
+
+### Steiner Tree
+
+![Steiner Tree](https://github.com/pratikpakhale/kmb-cpu/blob/main/steiner.png?raw=true)
+
+## Stats
+
+### Parallel Execution Performance
+
+![Parallel Execution Performance](https://github.com/pratikpakhale/kmb-cpu/blob/main/performance_seq_parallel.png?raw=true)
+
+### Our vs Original | Accuracy
+
+![Our vs Original | Accuracy](https://github.com/pratikpakhale/kmb-cpu/blob/main/accuracy.png?raw=true)
+
+### Our vs Original | Time
+
+![Our vs Original | Time](https://github.com/pratikpakhale/kmb-cpu/blob/main/time.png?raw=true)
 
 ## References
 
