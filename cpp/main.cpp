@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 
   end = system_clock::now();
   duration<double> elapsed_seconds = end - start;
-  cout << "time: " << elapsed_seconds.count() << "s\n";
+  cout << "TIME " << elapsed_seconds.count() * 1000 << endl;
 
   return 0;
 }

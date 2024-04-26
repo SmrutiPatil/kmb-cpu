@@ -12,11 +12,10 @@ void KMB::bothParallel()
   // graph.printEdgeList();
 
   // S1
-  cout << "S1" << endl;
+
   Graph graph1(vector<vector<Edge>>(graph.adjacency_list.size(), vector<Edge>()), {});
 
   // S2
-  cout << "S2" << endl;
 
   set<pair<int, int>> added_edges;
   map<pair<int, int>, vector<Edge>> shortest_path_edges;
@@ -66,7 +65,6 @@ void KMB::bothParallel()
   // graph1.printEdgeList();
 
   // S3
-  cout << "S3" << endl;
 
   PrimMST prim;
   // Graph T1 = prim.find_mst(graph1, terminals[0]);
@@ -75,7 +73,7 @@ void KMB::bothParallel()
   // T1.printEdgeList();
 
   // S4
-  cout << "S4" << endl;
+
   set<int> vertices;
   for (auto &edge : shortest_path_edges)
   {
@@ -97,11 +95,11 @@ void KMB::bothParallel()
   // graph2.printEdgeList(true);
 
   // S5
-  cout << "S5" << endl;
+
   // Graph steiner = prim.find_mst(graph2, terminals[0]);
   Graph steiner = prim.find_mst_parallel(graph2, terminals[0]);
 
   // steiner.printEdgeList();
-  cout << "TREE WEIGHT: "
+  cout << "VALUE "
        << steiner.getGraphWeight() << endl;
 }
