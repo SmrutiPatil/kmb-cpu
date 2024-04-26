@@ -6,19 +6,18 @@ class Dijkstra:
         self.adjacency_list = graph.adjacency_list
 
     def find_shortest_path(self, start, end):
-        pq = [(0, start)]  # Priority queue to store vertices with their distances from start
-        dist = {vertex: float('inf') for vertex in self.vertices}  # Initialize distances
+        pq = [(0, start)]
+        dist = {vertex: float('inf') for vertex in self.vertices} 
         dist[start] = 0
-        prev = {vertex: None for vertex in self.vertices}  # Store the previous vertex on the shortest path
+        prev = {vertex: None for vertex in self.vertices} 
 
         while pq:
             current_dist, current_vertex = heapq.heappop(pq)
 
-            if current_dist > dist[current_vertex]:  # If outdated vertex is encountered, ignore
+            if current_dist > dist[current_vertex]: 
                 continue
 
             if current_vertex == end:
-                # Reconstruct the path and edges
                 path = []
                 edges = []
                 while current_vertex is not None:
