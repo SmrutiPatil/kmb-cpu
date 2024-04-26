@@ -1,11 +1,43 @@
 # KMB algorithm for Steiner Trees
 
+### Python
+
 ```bash
+cd python
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
 
-## Algorithm
+### C++
+
+```bash
+cd cpp
+cmake .
+make
+```
+
+### To run KMB algorithm with `instance050` as input from `instances/` folder:
+
+```bash
+./cpp/build/kmb < instances/instance050.gr -o
+```
+
+### Flags
+
+- `-o` to run in outer parallel mode
+- `-i` to run in inner parallel mode
+- `-b` to run in both parallel mode
+- `-s` to run in sequential mode
+
+### Run original code
+
+```bash
+./cpp/build/og < instances/instance050.gr
+```
+
+## KMB Algorithm
 
 ```code
 
