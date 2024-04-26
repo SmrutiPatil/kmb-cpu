@@ -3,24 +3,16 @@
 #include "prim_mst.h"
 #include <algorithm>
 #include <set>
-
 #include <omp.h>
 
 void KMB::outerParallel()
 {
-
-  // graph.printEdgeList();
-
-  // S1
-
   Graph graph1(vector<vector<Edge>>(graph.adjacency_list.size(), vector<Edge>()), {});
-
-  // S2
 
   set<pair<int, int>> added_edges;
   map<pair<int, int>, vector<Edge>> shortest_path_edges;
 
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic)
   for (int i = 0; i < terminals.size(); ++i)
   {
     int u = terminals[i];
@@ -30,14 +22,12 @@ void KMB::outerParallel()
 
       if (u < 0 || u >= graph.adjacency_list.size())
       {
-#pragma omp critical
         cout << "Invalid terminal " << u << endl;
         continue;
       }
       if (u >= v)
       {
         continue;
-        // save time
       }
 
       vector<int> path;
@@ -45,7 +35,6 @@ void KMB::outerParallel()
 
       Dijkstra dijkstra;
       dijkstra.find_shortest_path(graph, u, v, path, edges);
-      // dijkstra.find_shortest_path_parallel(graph, u, v, path, edges);
 
 #pragma omp critical
       {
@@ -53,26 +42,14 @@ void KMB::outerParallel()
         if (added_edges.find({u, v}) == added_edges.end() && added_edges.find({v, u}) == added_edges.end())
         {
           graph1.adjacency_list[u].push_back({v, dijkstra.dist[v], u});
-          added_edges.insert({
-              u,
-              v,
-          });
+          added_edges.insert({u, v});
         }
       }
     }
   }
 
-  // graph1.printEdgeList();
-
-  // S3
-
   PrimMST prim;
-  // Graph T1 = prim.find_mst(graph1, terminals[0]);
   Graph T1 = prim.find_mst_parallel(graph1, terminals[0]);
-
-  // T1.printEdgeList();
-
-  // S4
 
   set<int> vertices;
   for (auto &edge : shortest_path_edges)
@@ -92,14 +69,6 @@ void KMB::outerParallel()
     }
   }
 
-  // graph2.printEdgeList(true);
-
-  // S5
-
-  // Graph steiner = prim.find_mst(graph2, terminals[0]);
   Graph steiner = prim.find_mst_parallel(graph2, terminals[0]);
-
-  // steiner.printEdgeList();
-  cout << "VALUE "
-       << steiner.getGraphWeight() << endl;
+  cout << "VALUE " << steiner.getGraphWeight() << endl;
 }
