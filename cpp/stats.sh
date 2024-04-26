@@ -19,7 +19,7 @@ create_or_append_csv() {
     if [ ! -f "$output_file" ]; then
         echo "instance,value,time,nodes,edges,terminals" > "$output_file"
     fi
-    for i in {1..20}; do
+    for i in {1..50}; do
         instance=$(printf "instance%03d" "$i")
         result=$(run_executable "$exec" "$instance")
         echo "$result" >> "$output_file"
