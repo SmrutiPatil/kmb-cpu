@@ -31,7 +31,7 @@ make
 - `-b` to run in both parallel mode
 - `-s` to run in sequential mode
 
-### Run original code
+### Run original research code
 
 ```bash
 ./cpp/build/og < instances/instance050.gr
@@ -69,3 +69,10 @@ T2 = minimum_spanning_tree(G2);
 
 Output: T2
 ```
+
+## References
+
+Pace Challenge 2018: [STP](https://pacechallenge.org/2018/)
+<br />
+ACM Research Paper : [Accelerating Computation of Steiner Trees on GPUs
+](https://dl.acm.org/doi/abs/10.1007/s10766-021-00723-0)
