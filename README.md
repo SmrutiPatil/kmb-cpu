@@ -82,6 +82,18 @@ Output: T2
 
 ## Stats
 
+[Processor Information](./processor_info.txt)
+
+### Generate Results Data `results/`
+
+Modify the `stats.sh` file as per requirements
+
+```bash
+cd cpp/
+chmod +x ./stats.sh
+./stats.sh kmb # to run kmb exec for 1 to 50 instances
+```
+
 ### Parallel Execution Performance
 
 ![Parallel Execution Performance](https://github.com/pratikpakhale/kmb-cpu/blob/main/performance_seq_parallel.png?raw=true)
