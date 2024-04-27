@@ -73,13 +73,8 @@ class Graph:
         plt.figure()
         nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=700, edge_color='black', linewidths=1, font_size=12)
 
-        # Highlight vertices from subgraph
         nx.draw_networkx_nodes(G, pos, nodelist=subgraph_nodes, node_color='red', node_size=700)
-
-        # Highlight vertices from subgraph
         nx.draw_networkx_nodes(G, pos, nodelist=subgraph_terminal_vertices, node_color='green', node_size=700)
-
-        # Highlight edges from subgraph
         nx.draw_networkx_edges(G, pos, edgelist=subgraph_edges, edge_color='red', width=2)
 
         plt.text(0.05, 0.95, 'Blue: Original Graph', color='blue', transform=plt.gca().transAxes)
