@@ -91,8 +91,11 @@ Modify the `stats.sh` file as per requirements
 ```bash
 cd cpp/
 chmod +x ./stats.sh
-./stats.sh kmb # to run kmb exec for 1 to 50 instances
+./stats.sh <executable_name> <output_file_name> <start_instance> <end_instance> <flags>
 ```
+
+eg &nbsp; `./stats.sh kmb test.csv 1 10 -o`
+<br />This will create a `test.csv` file in `results/` which will contain results of instances from 1 to 10. The flag `-o` meaning the kmb algorithm will run in outer parallel mode
 
 ### Parallel Execution Performance
 
