@@ -1,0 +1,5 @@
+Method,Ratio_to_Average_Performance
+bothParallel,0.24280187107173945
+innerParallel,0.062332627881547004
+outerParallel,3.2791134832128437
+Sequential,0.4157520178338698
